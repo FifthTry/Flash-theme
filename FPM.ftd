@@ -1,4 +1,4 @@
 -- import: fpm
 
--- fpm.package:
-name: fifthtry/flash-theme
+-- fpm.package: fifthtry.github.io/flash-theme/
+zip: github.com/fifthtry/flash-theme/archive/refs/heads/main.zip
