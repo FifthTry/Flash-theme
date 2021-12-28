@@ -39,6 +39,7 @@ line-height: 30
 color: $neutral-800
 style: semi-bold
 padding-bottom: 20
+padding-top: 30
 border-bottom: 1
 border-color: $neutral-200
 width: fill
@@ -69,6 +70,30 @@ size: 24
 line-height: 24
 color: $neutral-800
 style: bold
+padding-bottom: 8
+padding-top: 16
+font: Open sans
+
+--- markdown:
+if: $body is not null
+body: $body
+
+-- ftd.column h1-lite:
+caption title:
+optional body body:
+width: fill
+region: h1
+padding-bottom: 12
+
+--- ftd.text:
+text: $title
+caption $title:
+region: title
+text: $title
+size: 24
+line-height: 24
+color: $neutral-800
+style: italic
 padding-bottom: 8
 padding-top: 16
 font: Open sans
