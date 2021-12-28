@@ -1,60 +1,30 @@
--- string main: #fff
 
--- boolean mobile: false
-
--- string primary: #F79489
-
--- string primary-500: #F8AFA6
-
--- string primary-300: #FADCD9
-
--- string primary-100: #F9F1F0
-
--- string accent: #0D1F2D
-
--- string error: c
-
--- string informational: c
-
--- string warning: c
-
--- string success: c
-
--- string secondary-100: c
-
--- string secondary-300: c
-
--- string secondary-400: c
-
--- string secondary-500: c
-
--- string secondary-700: c
-
-
--- string secondary-700: #4C555A
-
-
--- string secondary-900: #384248
-
-
--- string separator: #eee
+-- string neutral: #fff
+-- string neutral-200: #ced2dd
+-- string neutral-300: #F9F9F9
+-- string neutral-400: #E1E1E1
+-- string neutral-500: #323546
+-- string neutral-600: #3E4155
+-- string neutral-700: #1C1C24
+-- string neutral-800: #000
 
 
 -- ftd.text markdown:
-body body: 
-optional boolean collapsed: 
-optional caption title: 
-optional boolean two_columns: 
+body body:
+optional boolean collapsed:
+optional caption title:
+optional boolean two_columns:
 text: $body
 size: 15
 line-height: 24
-color: $secondary-700
+color: $neutral-700
 padding-bottom: 8
+font: Open sans
 
 
 -- ftd.column h0:
-caption title: 
-optional body body: 
+caption title:
+optional body body:
 width: fill
 region: h0
 
@@ -66,12 +36,13 @@ text: $title
 region: title
 size: 30
 line-height: 30
-color: $secondary-900
+color: $neutral-800
 style: semi-bold
 padding-bottom: 20
 border-bottom: 1
-border-color: $separator
+border-color: $neutral-200
 width: fill
+font: Open sans
 
 --- ftd.column:
 width: fill
@@ -83,23 +54,24 @@ body: $body
 
 
 -- ftd.column h1:
-caption title: 
-optional body body: 
+caption title:
+optional body body:
 width: fill
 region: h1
 padding-bottom: 12
 
 --- ftd.text:
 text: $title
-caption $title: 
+caption $title:
 region: title
 text: $title
 size: 24
 line-height: 24
-color: $secondary-700
+color: $neutral-800
 style: bold
 padding-bottom: 8
 padding-top: 16
+font: Open sans
 
 --- markdown:
 if: $body is not null
@@ -107,22 +79,23 @@ body: $body
 
 
 -- ftd.column h2:
-caption title: 
-optional body body: 
+caption title:
+optional body body:
 width: fill
 region: h2
 padding-bottom: 12
 
 --- ftd.text:
-caption $title: 
+caption $title:
 text: $title
 region: title
 size: 21
 line-height: 21
-color: $secondary-700
+color: $neutral-800
 style: semi-bold
 padding-bottom: 8
 padding-top: 16
+font: Open sans
 
 --- markdown:
 if: $body is not null
@@ -130,22 +103,23 @@ body: $body
 
 
 -- ftd.column h3:
-caption title: 
-optional body body: 
+caption title:
+optional body body:
 width: fill
 region: h3
 padding-bottom: 12
 
 --- ftd.text:
-caption $title: 
+caption $title:
 text: $title
 region: title
 size: 18
 line-height: 18
-color: $secondary-700
+color: $neutral-800
 style: semi-bold
 padding-bottom: 8
 padding-top: 16
+font: Open sans
 
 --- markdown:
 if: $body is not null
@@ -153,22 +127,24 @@ body: $body
 
 
 -- ftd.column h4:
-caption title: 
-optional body body: 
+caption title:
+optional body body:
 width: fill
 region: h4
 padding-bottom: 12
 
 --- ftd.text:
-caption $title: 
+caption $title:
 text: $title
 region: title
 size: 19
 line-height: 25
-color: black
+color: $neutral-800
 style: bold
 padding-bottom: 8
 padding-top: 16
+font: Open sans
+
 
 --- markdown:
 if: $body is not null
@@ -176,21 +152,22 @@ body: $body
 
 
 -- ftd.column h5:
-caption title: 
-optional body body: 
+caption title:
+optional body body:
 width: fill
 region: h5
 
 --- ftd.text:
-caption $title: 
+caption $title:
 text: $title
 region: title
 size: 16
 line-height: 21
-color: black
+color: $neutral-800
 style: bold
 padding-bottom: 12
 padding-top: 34
+font: Open sans
 
 --- markdown:
 if: $body is not null
@@ -198,21 +175,22 @@ body: $body
 
 
 -- ftd.column h6:
-caption title: 
-optional body body: 
+caption title:
+optional body body:
 width: fill
 region: h6
 
 --- ftd.text:
-caption $title: 
+caption $title:
 text: $title
 region: title
 size: 14
 line-height: 19
-color: black
+color: $neutral-800
 style: bold
 padding-bottom: 12
 padding-top: 34
+font: Open sans
 
 --- markdown:
 if: $body is not null
@@ -220,13 +198,13 @@ body: $body
 
 
 -- ftd.column image:
-string src: 
-optional caption caption: 
-optional body body: 
-optional string link: 
-optional string align: 
-optional string width: 
-optional string height: 
+string src:
+optional caption caption:
+optional body body:
+optional string link:
+optional string align:
+optional string width:
+optional string height:
 width: fill
 height: fill
 padding-bottom: 20
@@ -241,11 +219,12 @@ align: $align
 --- ftd.text:
 if: $caption is not null
 text: $caption
-color: #4D4D4D
+color: $neutral-800
 align: center
 width: fill
 size: 17
 style: italic
+font: Open sans
 
 --- markdown:
 if: $body is not null
@@ -253,11 +232,11 @@ body: $body
 
 
 -- ftd.column code:
-optional caption caption: 
-body body: 
-string lang: 
-optional string $filename: 
-optional string $full: 
+optional caption caption:
+body body:
+string lang:
+optional string $filename:
+optional string $full:
 padding-bottom: 12
 padding-top: 12
 width: fill
@@ -274,6 +253,7 @@ padding-bottom: 10
 padding-left: 20
 padding-right: 20
 border-top-radius: 4
+font: Open sans
 
 --- ftd.code:
 if: $caption is not null
@@ -310,8 +290,8 @@ overflow-x: auto
 
 
 /-- ftd.column latex:
-optional caption $caption: 
-body $body: 
+optional caption $caption:
+body $body:
 padding-bottom: 12
 
 /--- ftd.text:
@@ -332,7 +312,7 @@ style: italic
 
 
 -- ftd.iframe iframe:
-string src: 
+string src:
 src: $src
 height: 400
 width: fill
@@ -340,7 +320,7 @@ margin-bottom: 34
 
 
 -- ftd.iframe youtube:
-string id: 
+string id:
 youtube: $id
 height: 400
 width: fill
@@ -358,7 +338,7 @@ align: top
 
 
 -- ftd.column container_mobile:
-optional string id: 
+optional string id:
 id: $id
 width: fill
 padding-top: 10
@@ -370,7 +350,7 @@ align: top
 
 -- ftd.column desktop:
 width: fill
-optional string id: 
+optional string id:
 id: $id
 open: desktop-container
 
@@ -383,7 +363,7 @@ id: desktop-container
 
 -- ftd.column mobile:
 width: fill
-optional string id: 
+optional string id:
 id: $id
 open: mobile-container
 
@@ -449,6 +429,8 @@ $event-click$: stop-propagation
 color: #DCDCDC
 width: fill
 size: 14
+font: Open sans
+
 
 --- ftd.image:
 if: not $open
@@ -499,6 +481,7 @@ padding-bottom: 3
 padding-left: 10
 padding-right: 10
 size: 12
+font: Open sans
 
 --- ftd.column:
 border-width: 1
@@ -548,31 +531,63 @@ optional body body:
 if: $title is not null
 text: $title
 size: $heading_size
+font: Open sans
+color: $neutral-700
 
 --- ftd.text:
 if: $body is not null
 text: $body
 size: $base_size
+font: Open sans
 
 -- ftd.column sub_section:
 caption title:
 
---- ftd.text:
-text: $title
-size: $sub_heading_size
 
--- ftd.text toc-instance:
-size: 14
+
+-- ftd.column toc-instance:
+toc-item toc:
+padding-left: 10
+padding-top: 2
+padding-bottom: 2
+
+--- ftd.text:
 toc-item toc:
 link: $toc.url
 text: $toc.title
+size: 14
+line-height: 20
 min-width: fit-content
-
--- ftd.column header-link:
-toc-item toc:
+padding-left: 10
+padding-top: 3
+padding-bottom: 3
+font: Open sans
+color: $neutral-700
 
 --- toc-instance:
-toc: $toc
+$loop$: $toc.children as $obj
+toc: $obj
+
+
+-- ftd.column render-toc:
+sticky: true
+top: 0
+height: calc 100vh - 0px
+overflow-y: auto
+width: 300
+align: top-left
+padding-left: 10
+padding-top: 15
+padding-right: 20
+padding-bottom: 40
+border-right: 1
+border-color: #ebedef
+
+--- toc-instance:
+$loop$: $toc as $obj
+toc: $obj
+
+
 
 -- ftd.column page:
 width: fill
@@ -582,20 +597,17 @@ open: main-container
 width: fill
 id: main-row
 
---- ftd.column:
-width: 300
-height: fill
-
---- header-link:
-$loop$: $toc as $obj
-toc: $obj
+--- render-toc:
 
 --- container: main-row
 
---- ftd.row:
+--- ftd.column:
 width: fill
 height: fill
+max-width: 900
+
 
 --- ftd.column:
 id: main-container
-
+max-width: 700
+align: top
