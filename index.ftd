@@ -538,12 +538,13 @@ background-color: #f6faff
 
 
 
-
 -- record toc-item:
 string title:
-string id:
 string url:
+boolean is_heading:
+string number:
 toc-item list children:
+
 
 -- toc-item list toc:
 
@@ -576,11 +577,18 @@ padding-left: 10
 padding-top: 2
 padding-bottom: 2
 
+--- ftd.row:
+id: toc-item-row
+
+
 --- ftd.text:
 toc-item toc:
-link: $toc.url
+if: $toc.is_heading
 text: $toc.title
 size: 14
+font: Open Sans
+color: $neutral-700
+style: bold
 line-height: 20
 min-width: fit-content
 padding-left: 10
@@ -588,6 +596,42 @@ padding-top: 3
 padding-bottom: 3
 font: Open sans
 color: $neutral-700
+
+
+--- ftd.text:
+toc-item toc:
+if: not $toc.is_heading
+text: $toc.number
+size: 14
+font: Open Sans
+color: $neutral-700
+style: bold
+width: auto
+line-height: 20
+min-width: fit-content
+padding-left: 10
+padding-top: 3
+padding-bottom: 3
+font: Open sans
+color: $neutral-700
+
+
+--- ftd.text:
+toc-item toc:
+if: not $toc.is_heading
+link: $toc.url
+text: $toc.title
+size: 14
+font: Open sans
+color: $neutral-700
+line-height: 20
+min-width: fit-content
+padding-top: 3
+padding-bottom: 3
+font: Open sans
+color: $neutral-700
+
+--- container: ftd.main
 
 --- toc-instance:
 $loop$: $toc.children as $obj
